@@ -1,0 +1,43 @@
+id,pass,check,severity
+1,"Pass 1: Schematic intent","Absolute maximum ratings hold on every active pin across the full input range, including startup and hot plug",Critical
+2,"Pass 1: Schematic intent","Power stage values (feedback divider, frequency resistor, inductor, output capacitance) match the datasheet equations",Critical
+3,"Pass 1: Schematic intent","Boot and strap pins select the intended mode at power-up",Critical
+4,"Pass 1: Schematic intent","Signal direction is correct on every interface, including isolators, level shifters and buffers",Critical
+5,"Pass 1: Schematic intent","No floating inputs. Enables, resets and unused inputs are tied the way the datasheet says",Major
+6,"Pass 1: Schematic intent","Pull-ups exist where needed and are sized for the bus speed",Major
+7,"Pass 1: Schematic intent","Power sequencing and reset timing meet the processor requirements",Major
+8,"Pass 1: Schematic intent","User-facing connectors have ESD protection. Power inputs have reverse polarity and overcurrent protection",Major
+9,"Pass 1: Schematic intent","The board can be programmed and debugged. Every rail has a test point",Major
+10,"Pass 1: Schematic intent","ERC is clean and every waived warning has a written reason",Major
+11,"Pass 2: BOM and parts","Full part numbers including suffixes match the variant the schematic needs",Critical
+12,"Pass 2: BOM and parts","Every BOM package matches its footprint",Critical
+13,"Pass 2: BOM and parts","No NRND or obsolete parts",Major
+14,"Pass 2: BOM and parts","Voltage, power and temperature ratings have margin. MLCC capacitance checked at real DC bias",Major
+15,"Pass 2: BOM and parts","DNP parts are marked the same way in schematic, BOM and assembly drawing",Major
+16,"Pass 2: BOM and parts","Common parts have stock and a second source",Minor
+17,"Pass 3: Footprints and placement","Footprints match the datasheet land pattern: pad size, pitch, pin 1 and thermal pad",Critical
+18,"Pass 3: Footprints and placement","Connector orientation and mating side match the mechanical drawing or enclosure model",Critical
+19,"Pass 3: Footprints and placement","Mounting holes, keepouts and component heights fit the enclosure",Major
+20,"Pass 3: Footprints and placement","Decoupling capacitors sit close to their pins with short ground paths",Major
+21,"Pass 3: Footprints and placement","Wireless modules have the antenna keepout their datasheet asks for",Major
+22,"Pass 3: Footprints and placement","Hot parts have enough copper or thermal vias and sit away from heat-sensitive parts",Major
+23,"Pass 3: Footprints and placement","Pin 1 and polarity marks are still visible after assembly",Minor
+24,"Pass 4: Routing, power and return paths","No unrouted nets, no orphan copper in pours, thermal relief on plane pads that get hand soldered",Critical
+25,"Pass 4: Routing, power and return paths","Creepage and clearance on high-voltage nets meet the safety standard that applies",Critical
+26,"Pass 4: Routing, power and return paths","Trace widths carry the real current at the ordered copper weight",Major
+27,"Pass 4: Routing, power and return paths","The switching regulator hot loop is as tight as the layout guide shows",Major
+28,"Pass 4: Routing, power and return paths","No fast signal crosses a gap in its reference plane",Major
+29,"Pass 4: Routing, power and return paths","Controlled-impedance traces match the stackup the fab confirmed",Major
+30,"Pass 4: Routing, power and return paths","Differential pairs are routed together and length-matched to the interface spec",Major
+31,"Pass 4: Routing, power and return paths","Analog inputs, crystals and sensitive nodes are kept away from switch nodes and clocks",Major
+32,"Pass 5: DFM and fab rules","DRC runs with the fab's published rules, not the tool defaults",Critical
+33,"Pass 5: DFM and fab rules","Copper is clear of the board edge, slots and V-score lines",Major
+34,"Pass 5: DFM and fab rules","Solder mask dams exist between fine-pitch pads. Via tenting is a deliberate choice",Major
+35,"Pass 5: DFM and fab rules","Vias in pads are filled and capped, or moved out of the pad",Major
+36,"Pass 5: DFM and fab rules","Fiducials and panelization match what the assembler asks for",Minor
+37,"Pass 6: Output files","Gerbers open in a viewer with every layer present, unmirrored, outline on the right layer",Critical
+38,"Pass 6: Output files","The drill file matches the board holes. Plated and non-plated holes are separate",Critical
+39,"Pass 6: Output files","The fab drawing states stackup, material, finish, copper weight, impedance targets and tolerances",Major
+40,"Pass 6: Output files","Pick-and-place has the right origin, rotation and side for every part",Major
+41,"Pass 6: Output files","Netlist and BOM in the release match the schematic of record",Major
+42,"Pass 6: Output files","The revision on copper or silkscreen matches file names and release notes",Minor
